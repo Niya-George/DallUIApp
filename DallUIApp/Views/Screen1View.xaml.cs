@@ -52,21 +52,21 @@ public partial class Screen1View : ContentPage
                ImagePath="dashboard1.jpg",             
                MainKeyword="Palace",
                 Keywords = new List<string>{
-                   "castle,mountain,trees"}
+                   "Castle, Mountain, Trees"}
            },
            new GeneratedImage
            {
                ImagePath="dashboard2.jpg",
                MainKeyword="Hills",
                 Keywords = new List<string>{
-                   "mist,moon,mountains"}
+                   "Mist, Moon, Mountains"}
            },
            new GeneratedImage
            {
                ImagePath="dashboard3.jpg",
                MainKeyword="Robot",
                 Keywords = new List<string>{
-                   "AI,technology,future"}
+                   "AI, Technology, Future"}
            },
        };
     }

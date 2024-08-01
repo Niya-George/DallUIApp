@@ -12,7 +12,7 @@
             <toolkit:ListToStringConverter x:Key="ListToStringConverter" Separator=","/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <Grid RowDefinitions=".1*,.2*,.15*,.45*,.1*" Margin="20,30,30,20" RowSpacing="20">
         <Grid  Grid.Row="0" ColumnDefinitions="*,*" Margin="0,10">
             <VerticalStackLayout Grid.Column="0" Spacing="7">
@@ -36,22 +36,20 @@
                 <Image Source="profilesquare.jpg"/>
             </Border>
         </Grid>
+        
         <VerticalStackLayout Grid.Row="1" Spacing="6">
             <Label Text="Create incredible universes" 
                    TextColor="White" 
                    FontAttributes="Bold" FontSize="25"/>
             <Label Text="Join your friends" 
                    TextColor="White" 
-                   FontSize="18"/>               
+                   FontSize="18"/>
         </VerticalStackLayout>
-        
-        <CollectionView Grid.Row="2"  ItemsSource="{Binding Profiles}"                                              
-                       >
+
+        <CollectionView Grid.Row="2"  ItemsSource="{Binding Profiles}">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="15" Orientation="Horizontal"/>
             </CollectionView.ItemsLayout>
-            
-            
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions=".2*,.8*" HeightRequest="60" WidthRequest="190">
@@ -68,12 +66,13 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
         <cards:CoverFlowView 
             Grid.Row="3"
             ItemsSource="{Binding GeneratedImages}" 
-            Margin="-25,0,25,0"
+            Margin="25,0,25,0"
             PositionShiftValue="125">
-            
+
             <x:Arguments>
                 <proc:CoverFlowProcessor OpacityFactor="0" ScaleFactor="0.75"/>
             </x:Arguments>
@@ -86,24 +85,17 @@
                                    Aspect="AspectFill"
                                   Source="{Binding ImagePath}" />
                             <Grid Grid.Row="1">
-                            
-                                    <Rectangle Fill="Black" />
-                                    <VerticalStackLayout Margin="30,20,0,0">
-                                        <Label Text="{Binding MainKeyword}" TextColor="White"/>
-                                        <Label Text="{Binding Keywords, Converter={StaticResource ListToStringConverter}}"  TextColor="White" />
-                                    </VerticalStackLayout>
-                                
+                                <Rectangle Fill="Black" />
+                                <VerticalStackLayout Margin="30,20,0,0">
+                                    <Label Text="{Binding MainKeyword}" TextColor="White"/>
+                                    <Label Text="{Binding Keywords, Converter={StaticResource ListToStringConverter}}"  TextColor="White" />
+                                </VerticalStackLayout>
                             </Grid>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </cards:CoverFlowView.ItemTemplate>
         </cards:CoverFlowView>
-
-
         <Button Grid.Row="4" BackgroundColor="White" Text="CREATE NEW IMAGE" TextColor="Black"  CornerRadius="50" HeightRequest="50"/>
-        
     </Grid>
-
-
 </ContentPage>
